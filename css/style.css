@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../img/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+
+.container {
+    width: 800px;
+    height: 600px;
+    border: 1px solid black;
+    background-color: cadetblue;
+    border-radius: 10px;
+}
+
+
+h1 {
+    color: white;
+}
+
+button {
+    padding: 5px 25px;
+    background-color: red;
+    color: white;
+    font-weight: 600;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .1s all ease-in-out;
+}
+
+.tela {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    position: relative;
+}
+
+/* Manual */
+#manual p, #final p {
+    color: white;
+    font-weight: 900;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#manual button {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+}
+
+/* fase 1 */
+#fase1,
+#fase2,
+#fase3,
+#final {
+    display: none;
+}
+
+
+
+#fase1 #botoes {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+/* Fase 2 */
+#fase2 #botoes {
+    width: 100%;
+    height: 70%;
+    position: absolute;
+}
+
+#fase2 .sim {
+    position: absolute;
+    top: 50%;
+    left: 200px;
+}
+
+#fase2 .sim:hover {
+    transform: scale(200%);
+}
+
+#fase2 .nao {
+    position: absolute;
+    top: 50%;
+    left: 400px;
+}
+
+/* Fase 3 */
+#fase3 #botoes {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#fase3 .nao {
+    animation-name: mexerbotao;
+    animation-duration: .3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+#fase3 .sim {
+    transform: scale(200%);
+}
+
+@keyframes mexerbotao {
+    0% {
+        transform: scale(15%) translate(0, 0);
+    }
+
+    50% {
+        transform: scale(15%) translate(800px, 0);
+    }
+
+    100% {
+        transform: scale(15%) translate(0, 0);
+    }
+}
+
+#final h1 { 
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+}
